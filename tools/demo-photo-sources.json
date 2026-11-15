@@ -1,0 +1,14 @@
+{
+  "license": "https://unsplash.com/license",
+  "usage": "Stock illustrations for fictional portfolio hotels; not photographs of the named demo properties.",
+  "photos": [
+    {"id":"photo-1566073771259-6a8506099945","caption":"Hotel and pool"},
+    {"id":"photo-1571896349842-33c89424de2d","caption":"Resort swimming pool"},
+    {"id":"photo-1542314831-068cd1dbfeeb","caption":"Hotel architecture"},
+    {"id":"photo-1564501049412-61c2a3083791","caption":"Hotel exterior"},
+    {"id":"photo-1566665797739-1674de7a421a","caption":"Hotel bedroom"},
+    {"id":"photo-1611892440504-42a792e24d32","caption":"Modern guest room"},
+    {"id":"photo-1616594039964-ae9021a400a0","caption":"Guest suite interior"},
+    {"id":"photo-1540518614846-7eded433c457","caption":"Comfortable bedroom"}
+  ]
+}
