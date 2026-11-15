@@ -1,0 +1,57 @@
+# STAY API only. Existing services in the workspace are not managed by this Blueprint.
+services:
+  - type: web
+    name: stay-hotel-api
+    runtime: docker
+    plan: free
+    region: singapore
+    repo: https://github.com/MrChengKang/hotel-booking
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeployTrigger: checksPass
+    healthCheckPath: /api/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: JAVA_TOOL_OPTIONS
+        value: -XX:MaxRAMPercentage=45 -XX:ActiveProcessorCount=1 -XX:+ExitOnOutOfMemoryError -Djava.awt.headless=true
+      - key: STAY_DB_POOL_SIZE
+        value: "3"
+      - key: SESSION_COOKIE_SAME_SITE
+        value: lax
+      - key: STAY_MEDIA_PROVIDER
+        value: cloudinary
+      - key: STAY_CLOUDINARY_PREFIX
+        value: stay
+      - key: STAY_MAIL_PROVIDER
+        value: brevo
+      - key: BREVO_SENDER_NAME
+        value: STAY
+      - key: STAY_ADMIN_BOOTSTRAP_ENABLED
+        value: "false"
+      # Enable sandbox checkout after configuring this public endpoint in Stripe.
+      - key: STAY_PAYMENTS_ENABLED
+        value: "false"
+      - key: STAY_PAYMENT_SCHEDULING_ENABLED
+        value: "true"
+      - key: STAY_REMEMBER_ME_KEY
+        generateValue: true
+      - key: APP_FRONTEND_URL
+        sync: false
+      - key: SPRING_DATASOURCE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: BREVO_API_KEY
+        sync: false
+      - key: BREVO_SENDER_EMAIL
+        sync: false

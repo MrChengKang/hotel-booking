@@ -1,5 +1,8 @@
 # STAY Spring Boot backend
 
+For Render Free + Vercel Hobby, see [the hosting guide](docs/DEPLOYMENT_RENDER_VERCEL.md). The root `render.yaml` defines a separate Free Docker service; secrets are supplied through Render.
+
+
 Java 21+, Spring Boot 4.1.2, Spring Security, Spring Data JPA and Aiven MySQL. Frontend: [MrChengKang/hotel-booking-system](https://github.com/MrChengKang/hotel-booking-system).
 
 ## Run locally
